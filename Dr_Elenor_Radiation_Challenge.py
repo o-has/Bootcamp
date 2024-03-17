@@ -53,7 +53,7 @@ while Flag_1 == True:
         print(col.GREEN +"\n+++ ADD MEASUREMENTS +++" + col.RESET)            
         
         # Request user to select location of reading
-        location_ident = input(f"\nLocations:\nCity Centre {col.YELLOW}[0]{col.RESET} \nIndustrial Zone {col.YELLOW}[1]{col.RESET} \nResidential District {col.YELLOW}[2]{col.RESET}\nRural Outskirts {col.YELLOW}[3]{col.RESET}\nDowntown {col.YELLOW}[4]{col.RESET}\n\nType number to select location of reading or type 'done' to finish: ")                
+        location_ident = input(f"\nLocations:\nCity Centre {col.YELLOW}[1]{col.RESET} \nIndustrial Zone {col.YELLOW}[2]{col.RESET} \nResidential District {col.YELLOW}[3]{col.RESET}\nRural Outskirts {col.YELLOW}[4]{col.RESET}\nDowntown {col.YELLOW}[5]{col.RESET}\n\nType number to select location of reading or type 'done' to finish: ")                
         Flag_2 = True       # Ensures While loop 2 activates
         
         # Condition checks if user wants to stop data entry
@@ -61,8 +61,8 @@ while Flag_1 == True:
             print(f"{col.GREEN}Thank you. The current Radiation Levels are shown above{col.RESET}")
             break
         # Condition checks that user enters only a number and this is between 0 and 4    
-        elif not location_ident.isnumeric() or not int(location_ident) < 5:
-            print(f"\n{col.YELLOW}*** Please enter only a numerical value between 0 and 4 ***{col.RESET}")
+        elif not location_ident.isnumeric() or not int(location_ident) < 6:
+            print(f"\n{col.YELLOW}*** Please enter only a numerical value between 1 and 5 ***{col.RESET}")
             continue
 
     except:
@@ -82,7 +82,7 @@ while Flag_1 == True:
         else:       
             # Code block to append new reading to correct location and display updated readings and calculations
             try: 
-                levelsall[int(location_ident)].append(int(levelinput))  # Attempts to add reading to levelsall, gives ValueError if non-integer entered
+                levelsall[int(location_ident)-1].append(int(levelinput))  # Attempts to add reading to levelsall, gives ValueError if non-integer entered
                 
                 print(f"\n{col.BLUE}=== NEW RADIATION LEVELS ==={col.RESET}")
                 
