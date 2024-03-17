@@ -15,10 +15,10 @@ levelsall = [[22, 19, 29, 31, 28],[35, 32, 30, 37, 40],[15, 12, 18, 20, 14],[9, 
 print(col.WHITE + "\n=== CODECITY RADIATION LEVELS ===" + col.RESET)
 
 # Adds all readings together
-total_levels = sum(sum(item) for item in levelsall)   
+total_levels = sum(sum(sublist) for sublist in levelsall)   
 
 # Returns quantity of readings
-total_readings = sum(len(item) for item in levelsall) 
+total_readings = sum(len(sublist) for sublist in levelsall) 
 
 # Calculates average
 big_average = total_levels/total_readings                   
